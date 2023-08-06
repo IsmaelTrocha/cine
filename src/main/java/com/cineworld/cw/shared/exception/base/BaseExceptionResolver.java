@@ -1,4 +1,4 @@
-package com.cineworld.cw.shared.exception;
+package com.cineworld.cw.shared.exception.base;
 
 import com.cineworld.cw.shared.exception.error.ErrorResponse;
 import org.springframework.core.Ordered;

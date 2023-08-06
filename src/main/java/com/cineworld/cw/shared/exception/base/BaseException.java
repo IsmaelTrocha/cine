@@ -1,5 +1,6 @@
-package com.cineworld.cw.shared.exception;
+package com.cineworld.cw.shared.exception.base;
 
+import com.cineworld.cw.shared.exception.code.ExceptionCode;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.UUID;
