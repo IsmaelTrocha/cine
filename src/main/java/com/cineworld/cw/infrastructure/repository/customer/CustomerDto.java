@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,5 +35,12 @@ public class CustomerDto {
   @ManyToOne
   private AddressDto address;
   private boolean active;
-  private String lastUpdate;
+  @Column(name = "create_at")
+  private String createAt;
+  @Column(name = "creation_date")
+  private LocalDateTime creationDate;
+  @Column(name = "update_at")
+  private String updateAt;
+  @Column(name = "update_date")
+  private LocalDateTime updateDate;
 }

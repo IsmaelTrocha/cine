@@ -4,7 +4,7 @@ import com.cineworld.cw.domain.entities.Category;
 import com.cineworld.cw.domain.services.category.GetCategoryService;
 import com.cineworld.cw.infrastructure.mapper.CategoryDtoMapper;
 import com.cineworld.cw.infrastructure.repository.category.CategoryRepository;
-import com.cineworld.cw.shared.exception.ExceptionCode;
+import com.cineworld.cw.shared.exception.code.ExceptionCode;
 import com.cineworld.cw.shared.messages.category.CategoryNotFoundException;
 import com.cineworld.cw.shared.utils.MessageUtils;
 import java.util.List;
