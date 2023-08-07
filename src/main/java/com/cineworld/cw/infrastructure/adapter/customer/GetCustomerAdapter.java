@@ -33,6 +33,6 @@ public class GetCustomerAdapter implements GetCustomerService {
 
   @Override
   public List<Customer> findAllByName(String name) {
-    return customerDtoMapper.toEntity(customerRepository.findAllByName(name));
+    return customerDtoMapper.toEntity(customerRepository.findByFirstName(name));
   }
 }

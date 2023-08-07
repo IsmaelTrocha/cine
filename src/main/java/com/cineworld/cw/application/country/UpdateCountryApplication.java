@@ -10,7 +10,6 @@ public class UpdateCountryApplication {
   private final UpdateCountryService updateCountryService;
 
   public void updateCountry(Country country,String updatedAt){
-    country.setLastUpdate(updatedAt);
     updateCountryService.updateCountry(country);
   }
 }
