@@ -13,7 +13,7 @@ public class LocaleConfig {
   @Bean
   public AcceptHeaderLocaleResolver localeResolver() {
     final AcceptHeaderLocaleResolver resolver = new AcceptHeaderLocaleResolver();
-    resolver.setDefaultLocale(Locale.ENGLISH);
+    resolver.setDefaultLocale(Locale.getDefault());
     return resolver;
   }
 }
