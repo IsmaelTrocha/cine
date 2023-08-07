@@ -1,15 +1,15 @@
-package com.cineworld.cw.domain.entities;
+package com.cineworld.cw.infrastructure.api.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Country {
+@Data
+
+public class CountryResponse {
 
   private Long id;
-  private String iso;
   private String name;
 }
