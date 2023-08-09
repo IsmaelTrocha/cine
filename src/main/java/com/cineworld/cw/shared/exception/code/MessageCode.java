@@ -5,7 +5,8 @@ import lombok.Getter;
 @Getter
 public enum MessageCode {
 
-  FILM_SAVE_SUCCESSFUL("Message-01", "Message.FILM_CREATE_SUCCESSFUL");
+  SUCCESSFUL("Message-01", "Message.SUCCESSFUL"),
+  FILM_SAVE_SUCCESSFUL("Message-02", "Message.FILM_CREATE_SUCCESSFUL");
 
   private final String code;
   private final String type;

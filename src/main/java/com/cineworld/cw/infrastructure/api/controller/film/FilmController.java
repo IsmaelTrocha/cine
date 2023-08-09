@@ -32,6 +32,7 @@ public class FilmController {
   private final FilmRequestMapper filmRequestMapper;
   private final FilmResponseMapper filmResponseMapper;
   private final MessageUtils messageUtils;
+
   @PostMapping
   public ResponseEntity<CreateResponse> createFilm(@RequestBody FilmRequest filmRequest,
       @RequestHeader(X_AUTH_EMAIL) String createAt) {
@@ -39,7 +40,7 @@ public class FilmController {
     createFilmApplication.createFilm(filmRequestMapper.toEntity(filmRequest));
     return new ResponseEntity<>(
         new CreateResponse(
-            messageUtils.getMessage(MessageCode.FILM_SAVE_SUCCESSFUL.getCode()),
+            messageUtils.getMessage(MessageCode.SUCCESSFUL.getCode()),
             messageUtils.getMessage(MessageCode.FILM_SAVE_SUCCESSFUL.getType()),
             messageUtils.getMessage(MessageCode.FILM_SAVE_SUCCESSFUL.getType())),
         HttpStatus.CREATED);
@@ -50,5 +51,6 @@ public class FilmController {
     return new ResponseEntity<>(filmResponseMapper.toDto(getFilmApplication.findById(id)),
         HttpStatus.OK);
   }
+
 
 }
