@@ -12,4 +12,5 @@ import org.mapstruct.MappingConstants.ComponentModel;
 public interface CategoryResponseMapper extends EntityToDto<CategoryResponse, Category> {
 
 
+
 }

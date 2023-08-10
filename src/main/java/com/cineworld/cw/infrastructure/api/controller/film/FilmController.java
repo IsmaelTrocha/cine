@@ -36,7 +36,6 @@ public class FilmController {
   @PostMapping
   public ResponseEntity<CreateResponse> createFilm(@RequestBody FilmRequest filmRequest,
       @RequestHeader(X_AUTH_EMAIL) String createAt) {
-
     createFilmApplication.createFilm(filmRequestMapper.toEntity(filmRequest));
     return new ResponseEntity<>(
         new CreateResponse(

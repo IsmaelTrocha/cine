@@ -10,6 +10,7 @@ public class CreateCustomerApplication {
   private final CreateCustomerService createCustomerService;
 
   public Customer createCustomer(Customer customer) {
+    customer.getAddress().setId(customer.getId());
     return createCustomerService.create(customer);
   }
 }

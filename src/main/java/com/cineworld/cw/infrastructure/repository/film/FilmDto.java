@@ -12,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.time.LocalDateTime;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -43,5 +44,12 @@ public class FilmDto {
   private int rentalDuration;
   @Column(name = "replacement_cost")
   private double replacementCost;
-
+  @Column(name = "create_at")
+  private String createAt;
+  @Column(name = "creation_date")
+  private LocalDateTime creationDate;
+  @Column(name = "update_at")
+  private String updateAt;
+  @Column(name = "update_date")
+  private LocalDateTime updateDate;
 }

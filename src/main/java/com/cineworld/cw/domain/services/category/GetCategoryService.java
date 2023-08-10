@@ -9,7 +9,6 @@ public interface GetCategoryService {
 
   List<Category> getAllCategories();
 
-  List<Category> getCategoriesById(List<Category> categories);
 
 
 }
