@@ -2,6 +2,7 @@ package com.cineworld.cw.application;
 
 import com.cineworld.cw.application.actor.CreateActorApplication;
 import com.cineworld.cw.application.actor.GetActorApplication;
+import com.cineworld.cw.application.category.CreateCategoryApplication;
 import com.cineworld.cw.application.category.GetCategoryApplication;
 import com.cineworld.cw.application.country.GetCountryApplication;
 import com.cineworld.cw.application.customer.CreateCustomerApplication;
@@ -11,6 +12,7 @@ import com.cineworld.cw.application.film.CreateFilmApplication;
 import com.cineworld.cw.application.film.GetFilmApplication;
 import com.cineworld.cw.domain.services.actor.CreateActorService;
 import com.cineworld.cw.domain.services.actor.GetActorService;
+import com.cineworld.cw.domain.services.category.CreateCategoryService;
 import com.cineworld.cw.domain.services.category.GetCategoryService;
 import com.cineworld.cw.domain.services.country.GetCountryService;
 import com.cineworld.cw.domain.services.customer.CreateCustomerService;
@@ -78,6 +80,12 @@ public class BeanModuleApplication {
   public CreateActorApplication createActorApplication(
       CreateActorService createActorService,
       GetCountryApplication getCountryApplication) {
-    return new CreateActorApplication(createActorService,getCountryApplication);
+    return new CreateActorApplication(createActorService, getCountryApplication);
+  }
+
+  @Bean
+  public CreateCategoryApplication createCategoryApplication(
+      CreateCategoryService createCategoryService) {
+    return new CreateCategoryApplication(createCategoryService);
   }
 }

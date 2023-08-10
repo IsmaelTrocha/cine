@@ -8,6 +8,7 @@ import com.cineworld.cw.shared.exception.code.ExceptionCode;
 import com.cineworld.cw.shared.messages.category.CategoryNotFoundException;
 import com.cineworld.cw.shared.utils.MessageUtils;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -29,11 +30,10 @@ public class GetCategoryAdapter implements GetCategoryService {
 
   @Override
   public List<Category> getAllCategories() {
-    return null;
+    return categoryDtoMapper.toEntity(categoryRepository.findAll());
   }
 
-  @Override
-  public List<Category> getCategoriesById(List<Category> categories) {
-    return null;
-  }
+
+
+
 }
