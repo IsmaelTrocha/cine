@@ -32,8 +32,6 @@ public class GetCategoryAdapter implements GetCategoryService {
     return null;
   }
 
-
-
   @Override
   public List<Category> getCategoriesById(List<Category> categories) {
     return null;
