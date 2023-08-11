@@ -1,14 +1,14 @@
-package com.cineworld.cw.domain.entities;
+package com.cineworld.cw.infrastructure.api.dto.response;
 
-import java.time.LocalDateTime;
+import com.cineworld.cw.domain.entities.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Customer {
+@Data
+public class CustomerResponse {
   private Long id;
   private String firstName;
   private String secondName;
@@ -17,8 +17,4 @@ public class Customer {
   private String email;
   private Address address;
   private boolean active;
-  private LocalDateTime creationDate;
-  private String createAt;
-  private String updateAt;
-  private LocalDateTime updateDate;
 }

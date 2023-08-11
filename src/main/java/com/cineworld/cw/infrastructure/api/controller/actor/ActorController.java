@@ -11,6 +11,7 @@ import com.cineworld.cw.shared.utils.MessageUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,7 @@ public class ActorController {
   private final ActorResponseMapper actorResponseMapper;
   private final MessageUtils messageUtils;
 
+  @PostMapping
   public ResponseEntity<CreateResponse> createActor(@RequestBody ActorRequest actorRequest,
       @RequestHeader(X_AUTH_EMAIL) String createAt) {
     createActorApplication.createActor(actorRequestMapper.toEntity(actorRequest));

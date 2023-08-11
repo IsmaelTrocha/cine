@@ -28,7 +28,7 @@ public class GetCustomerAdapter implements GetCustomerService {
   public Customer findById(Long id) {
     return customerDtoMapper.toEntity(customerRepository.findById(id)
         .orElseThrow(() -> new CustomerNotFoundException(messageUtils.getMessage(
-            ExceptionCode.CUSTOMER_INACTIVE.getType(), id.toString()))));
+            ExceptionCode.CUSTOMER_NOT_FOUND.getType(), id.toString()))));
   }
 
   @Override

@@ -16,8 +16,5 @@ public class CustomerRequest {
   private String secondSurname;
   private String email;
   private AddressRequest address;
-  private String createAt;
-  private LocalDateTime creationDate;
-  private String updateAt;
-  private LocalDateTime updateDate;
+
 }
