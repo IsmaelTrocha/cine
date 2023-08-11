@@ -11,6 +11,7 @@ import com.cineworld.cw.infrastructure.api.dto.response.CustomerResponse;
 import com.cineworld.cw.infrastructure.api.mapper.request.CustomerRequestMapper;
 import com.cineworld.cw.infrastructure.api.mapper.response.CustomerResponseMapper;
 import com.cineworld.cw.shared.utils.MessageUtils;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,6 +48,13 @@ public class CustomerController {
       @PathVariable("id") Long id) {
     return new ResponseEntity<>(customerResponseMapper.toDto(getCustomerApplication.findById(id)),
         HttpStatus.OK);
+  }
 
+  @GetMapping(value = "/get/{name}")
+  public ResponseEntity<List<CustomerResponse>> getCustomerById(
+      @PathVariable("name") String name) {
+    return new ResponseEntity<>(
+        customerResponseMapper.toDto(getCustomerApplication.findAllByName(name)),
+        HttpStatus.OK);
   }
 }
