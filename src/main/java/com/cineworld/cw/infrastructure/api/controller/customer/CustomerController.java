@@ -2,13 +2,16 @@ package com.cineworld.cw.infrastructure.api.controller.customer;
 
 import static com.cineworld.cw.shared.utils.CustomHeader.X_AUTH_EMAIL;
 
+import com.cineworld.cw.application.address.GetAddressApplication;
 import com.cineworld.cw.application.customer.CreateCustomerApplication;
 import com.cineworld.cw.application.customer.GetCustomerApplication;
 import com.cineworld.cw.application.customer.UpdateCustomerApplication;
+import com.cineworld.cw.domain.entities.Address;
 import com.cineworld.cw.infrastructure.api.dto.request.CustomerRequest;
 import com.cineworld.cw.infrastructure.api.dto.response.CreateResponse;
 import com.cineworld.cw.infrastructure.api.dto.response.CustomerResponse;
 import com.cineworld.cw.infrastructure.api.mapper.request.CustomerRequestMapper;
+import com.cineworld.cw.infrastructure.api.mapper.response.AddressResponseMapper;
 import com.cineworld.cw.infrastructure.api.mapper.response.CustomerResponseMapper;
 import com.cineworld.cw.shared.utils.MessageUtils;
 import java.util.List;
@@ -34,6 +37,8 @@ public class CustomerController {
   private final MessageUtils messageUtils;
   private final CustomerRequestMapper customerRequestMapper;
   private final CustomerResponseMapper customerResponseMapper;
+  private final GetAddressApplication getAddressApplication;
+  private final AddressResponseMapper addressResponseMapper;
 
   @PostMapping
   public ResponseEntity<CreateResponse> createCustomer(@RequestBody CustomerRequest customerRequest,
@@ -46,12 +51,16 @@ public class CustomerController {
   @GetMapping(value = "/{id}")
   public ResponseEntity<CustomerResponse> getCustomerById(
       @PathVariable("id") Long id) {
-    return new ResponseEntity<>(customerResponseMapper.toDto(getCustomerApplication.findById(id)),
+    List<Address> addresses = getAddressApplication.addressByCustomerIdIn(id);
+    CustomerResponse customerResponse = customerResponseMapper.toDto(
+        getCustomerApplication.findById(id));
+    customerResponse.setAddress(addressResponseMapper.toDto(addresses));
+    return new ResponseEntity<>(customerResponse,
         HttpStatus.OK);
   }
 
   @GetMapping(value = "/get/{name}")
-  public ResponseEntity<List<CustomerResponse>> getCustomerById(
+  public ResponseEntity<List<CustomerResponse>> getCustomerByName(
       @PathVariable("name") String name) {
     return new ResponseEntity<>(
         customerResponseMapper.toDto(getCustomerApplication.findAllByName(name)),

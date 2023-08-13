@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Customer {
   private Long id;
   private String firstName;
@@ -15,10 +16,10 @@ public class Customer {
   private String firstSurname;
   private String secondSurname;
   private String email;
-  private Address address;
   private boolean active;
   private LocalDateTime creationDate;
   private String createAt;
   private String updateAt;
   private LocalDateTime updateDate;
+
 }

@@ -8,10 +8,12 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants.ComponentModel;
 
 @Mapper(componentModel = ComponentModel.SPRING, uses = {
-    CityRequestMapper.class
+    CityRequestMapper.class,
+    CustomerRequestMapper.class
 }, injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface AddressRequestMapper {
 
   @Mapping(source = "cityId", target = "cityId.id")
+  @Mapping(source = "customerId",target = "customer.id")
   Address toEntity(AddressRequest addressRequest);
 }

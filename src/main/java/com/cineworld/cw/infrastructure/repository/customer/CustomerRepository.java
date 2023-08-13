@@ -12,12 +12,6 @@ public interface CustomerRepository extends JpaRepository<CustomerDto, Long> {
   @Query("SELECT c FROM CustomerDto c WHERE c.firstName LIKE %:firstName%")
   List<CustomerDto> findByFirstName(@Param("firstName") String firstName);
 
-  @Query("")
-  CustomerDto updateCustomer(@Param("firstName") String firstName,
-      @Param("secondName") String secondName,
-      @Param("firstSurname") String firstSurname,
-      @Param("secondSurname") String secondSurname,
-      @Param("email") String email
-  );
+
 
 }
