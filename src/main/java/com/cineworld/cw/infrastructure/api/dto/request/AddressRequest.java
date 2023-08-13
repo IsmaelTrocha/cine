@@ -14,4 +14,5 @@ public class AddressRequest {
   private String avenue;
   private Long cityId;
   private String postalCode;
+  private Long customerId;
 }

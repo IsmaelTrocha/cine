@@ -16,9 +16,6 @@ public class CreateCustomerApplication {
   public Customer createCustomer(Customer customer, String createAt) {
     customer.setCreateAt(createAt);
     customer.setCreationDate(LocalDateTime.now());
-    customer.getAddress().setId(customer.getId());
-    Address address = createAddressApplication.createAddress(customer.getAddress());
-    customer.setAddress(address);
     customer.setActive(Boolean.TRUE);
     return createCustomerService.create(customer);
   }

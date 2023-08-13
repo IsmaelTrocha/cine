@@ -26,7 +26,7 @@ public class CategoryDto {
   private Long id;
   private String name;
   @ManyToOne
-  @JoinColumn(name = "films_id")
+  @JoinColumn(name = "film_id")
   private FilmDto films;
   @Column(name = "last_update")
   private String lastUpdate;

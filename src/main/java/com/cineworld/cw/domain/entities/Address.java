@@ -16,5 +16,5 @@ public class Address {
   private City cityId;
   private String postalCode;
   private String lastUpdate;
-
+  private Customer customer;
 }

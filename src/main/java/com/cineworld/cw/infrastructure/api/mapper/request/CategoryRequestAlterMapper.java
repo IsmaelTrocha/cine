@@ -11,6 +11,6 @@ import org.mapstruct.MappingConstants.ComponentModel;
 @Mapper(componentModel = ComponentModel.SPRING)
 public interface CategoryRequestAlterMapper extends EntityToDto<CategoryRequestAlter, Category> {
 
-  @Mapping(source = "category", target = "category.id")
+  @Mapping(source = "categoryId", target = "category.id")
   List<Category> toEntity(List<CategoryRequestAlter> category);
 }
